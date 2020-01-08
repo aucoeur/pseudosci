@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'accounts',
+    'pseudosci',
 ]
 
 MIDDLEWARE = [
@@ -51,12 +54,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pseudosci.urls'
+ROOT_URLCONF = 'pseudosci-project.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates').replace('\\', '/'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -69,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pseudosci.wsgi.application'
+WSGI_APPLICATION = 'pseudosci-project.wsgi.application'
 
 
 # Database
@@ -120,3 +125,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# User Auth
+LOGIN_REDIRECT_URL = '/'
+DEFAULT_LOGOUT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

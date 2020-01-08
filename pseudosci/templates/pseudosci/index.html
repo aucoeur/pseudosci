@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <div class="d-flex">
+            {% include 'pseudosci/auth_main.html' %}
+        </div>
+    {% else %}
+        {% include 'pseudosci/anon_main.html' %}
+    {% endif %}
+    
+{% endblock content %}
