@@ -1,0 +1,17 @@
+
+{% block content %}
+<div class="container-fluid">
+    <h3>List {% if quizzes %}<small class="text-muted">({{ quizzes|length }}
+            Quiz{{ quizzes|length|pluralize:"zes" }})</small>{% endif %}</h3>
+    <hr>
+    <br /><br />
+    {% if quizzes %}
+        {% for quiz in quizzes %}
+            {{ quiz.title }}
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="alert alert-primary" role="alert">No pages to display.</div>
+    {% endif %}
+</div>
+{% endblock %}
