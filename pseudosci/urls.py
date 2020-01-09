@@ -1,9 +1,8 @@
 from django.urls import path
-from pseudosci import views
-from pseudosci.views import QuizListView
+from pseudosci.views import IndexView, QuizView
 
 
 urlpatterns = [
-    path('', views.index, name = 'pseudosci-index'),
-    path('list/', QuizListView.as_view(), name = 'quiz-list-view'),
+    path('', IndexView.as_view(), name = 'pseudosci-index'),
+    path('quiz/<str:slug>', QuizView.as_view(), name = 'quiz-page')
 ]

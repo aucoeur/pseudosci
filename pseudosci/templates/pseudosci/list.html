@@ -1,13 +1,13 @@
 
 {% block content %}
-<div class="container-fluid">
+<div class="container-fluid mx-4 my-3">
     <h3>List {% if quizzes %}<small class="text-muted">({{ quizzes|length }}
             Quiz{{ quizzes|length|pluralize:"zes" }})</small>{% endif %}</h3>
     <hr>
-    <br /><br />
+    <br />
     {% if quizzes %}
         {% for quiz in quizzes %}
-            {{ quiz.title }}
+            <a href="{% url 'quiz-page' quiz.slug %}">{{ quiz.title }}</a>
         {% endfor %}
     </div>
     {% else %}

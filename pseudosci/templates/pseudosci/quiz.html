@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col m-4">
+            <h3>{{ quiz.title }} </h3>
+            <br>
+            <small class="text-muted">Created {{ quiz.created|date:"SHORT_DATETIME_FORMAT" }} | Last updated
+                {{ quiz.modified|date:"SHORT_DATETIME_FORMAT" }} by <b>{{ quiz.author.username }}</b></small>
+            <hr>
+
+            <a href="{% url 'pseudosci-index' %}">Back to List</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
