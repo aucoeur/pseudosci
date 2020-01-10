@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 # CSRF_COOKIE_SECURE = True
 # SESSION_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = False
+# SECURE_SSL_REDIRECT = False
 
 # SECURITY WARNING: keep the secret key used in production secret!
 load_dotenv()
