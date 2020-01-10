@@ -6,4 +6,4 @@ python-monkey-business==1.0.0
 pytz==2019.3
 six==1.13.0
 sqlparse==0.3.0
-gunicorn
+whitenoise==5.0.1
