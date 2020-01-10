@@ -10,7 +10,10 @@
             <small class="text-muted">Created {{ quiz.created|date:"SHORT_DATETIME_FORMAT" }} | Last updated
                 {{ quiz.modified|date:"SHORT_DATETIME_FORMAT" }} by <b>{{ quiz.author.username }}</b></small>
             <hr>
-
+            <p>{{ quiz.description }}</p>
+                
+            <hr>
+            <a href="{% url 'quiz-update-page' quiz.slug %}">Edit This Document</a>
             <a href="{% url 'pseudosci-index' %}">Back to List</a>
         </div>
     </div>

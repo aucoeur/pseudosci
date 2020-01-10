@@ -33,6 +33,14 @@ class Quiz(models.Model):
         # Call save on the superclass.
         return super(Quiz, self).save(*args, **kwargs)
 
+class Result(models.Model):
+    quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
+    title = models.CharField('Result', max_length=255, unique=True)
+    description = models.TextField('Description', unique=True)
+
+    def __str__(self):
+        return self.title
+
 class Question(models.Model):
     quiz = models.ForeignKey(Quiz, on_delete=models.CASCADE)
     prompt = models.CharField('Question', max_length=255)
@@ -43,8 +51,7 @@ class Question(models.Model):
 class Choice(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     choice_text = models.CharField(max_length=200)
-    count = models.IntegerField(default=0)
+    result = models.ManyToManyField(Result)
 
     def __str__(self):
         return self.choice_text
-

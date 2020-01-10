@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="flex-fill px-4 border-right">
+    <form method="POST">
+        {% include 'pseudosci/partial/form.html' %}
+        <input class="btn btn-info" type="submit" value="Save Changes">
+    </form>
+</div>
+{% endblock content %}

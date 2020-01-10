@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ <div class="flex-fill px-4 border-right">
+    <h2 class="mt-4">EDIT</h2>
+    <form method="POST">
+        {% include 'pseudosci/partial/form.html' %}
+        <input class="btn btn-info" type="submit" value="Save Changes"> <a
+            href="{% url 'quiz-delete' quiz.slug %}" class="btn btn-danger">Delete Quiz</a>
+    </form>
+</div>
+{% endblock content %}
